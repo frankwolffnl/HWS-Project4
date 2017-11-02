@@ -41,6 +41,10 @@ class ViewController: UIViewController, WKNavigationDelegate {
 		let url = URL(string: "https://" + action.title!)!
 		webView.load(URLRequest(url: url))
 	}
+	
+	func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+		title = webView.title
+	}
 
 	override func didReceiveMemoryWarning() {
 		super.didReceiveMemoryWarning()
